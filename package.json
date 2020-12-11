@@ -1,0 +1,51 @@
+{
+  "name": "EToken",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:eTokenize/EToken.git",
+  "author": "eTokenize",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "build": "truffle compile",
+    "start": "ganache-cli --quiet --gasLimit 7000000 -p 8545 -m \"concert load couple harbor equip island argue ramp clarify fence smart topic\"",
+    "migrate": "truffle migrate --reset --network development",
+    "test": "scripts/test.sh",
+    "coverage": "scripts/coverage.sh",
+    "lint": "/bin/bash -c 'eslint .; esr=$?; solium -d contracts/; sor=$?; [ $esr == 0 -a $sor == 0 ]'",
+    "beautify": "eslint .  --fix && solium -d contracts/ --fix",
+    "upgradeToken": "yarn truffle exec scripts/upgradeToken/upgradeTokenWrapper.js $@"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "@ensdomains/ens": "https://github.com/etoroxlabs/ens.git#aa88abc0fc89a39a752a0192d160483a6faa1da8",
+    "eth-ens-namehash": "2.0.8",
+    "ganache-cli": "6.2.3",
+    "openzeppelin-solidity": "2.0.0",
+    "readline-sync": "^1.4.9",
+    "truffle": "4.1.14",
+    "truffle-hdwallet-provider": "0.0.6",
+    "truffle-ledger-provider": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-bignumber": "^3.0.0",
+    "coveralls": "^3.0.2",
+    "eslint": "^5.12.0",
+    "eslint-config-semistandard": "^13.0.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eth-gas-reporter": "0.1.12",
+    "optimist": "^0.6.1",
+    "solidity-coverage": "0.5.11",
+    "solium": "^1.1.8",
+    "solium-plugin-zeppelin": "https://github.com/OpenZeppelin/solium-plugin-zeppelin.git#44029c8391806f5ba042976e07cc53d793bd8247",
+    "truffle-assertions": "0.7.1"
+  },
+  "resolutions": {
+    "@ledgerhq/web3-subprovider": "4.41.0"
+  }
+}
